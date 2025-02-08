@@ -39,7 +39,7 @@ nav {
     text-decoration: none;
     font-weight: bold;
     padding: 8px 12px;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
@@ -61,6 +61,15 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.india-map-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .state {
@@ -71,8 +80,8 @@ nav {
     border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
-    visibility: hidden; /* Initially hidden */
-    transition: opacity 0.3s ease-in-out;
+    opacity: 0  ;
+    transition: all 0.3s ease-in-out;
 }
 
 .state::after {
@@ -88,7 +97,6 @@ nav {
 
 /* Show on Hover */
 .india-map:hover .state {
-    visibility: visible;
     opacity: 1;
 }
 
