@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router";
+import ReactIcon from "../assets/react.svg"
 
 const NAV_LINKS = [
   { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Services", path: "/services" },
-  { name: "Contact", path: "/contact" },
+  { name: "About", path: "#about" },
+  { name: "Services", path: "#services" },
+  { name: "Contact", path: "#contact" },
 ];
 
 function Navbar() {
@@ -17,16 +18,21 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="text-2xl font-bold">Election-x-Press</div>
+          <div className="text-2xl font-bold flex flex-row gap-3">
+            <img src={ReactIcon}/>
+            {/* Election-x-Press */}
+          </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
-            {NAV_LINKS.map((link) => (
-              <Link 
-                key={link.path} 
-                to={link.path}
-                className="hover:bg-[#0055aa] p-2 rounded-[5px]"
-                >{link.name}</Link>
+            {NAV_LINKS.map((link) => (          
+                <a 
+                  href={link.path}
+                  key={link.path}
+                  className="hover:bg-[#0055aa] p-2 rounded-[5px]"
+                  >
+                    {link.name}
+                </a>
             ))}
           </div>
 

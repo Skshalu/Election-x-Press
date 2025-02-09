@@ -22,7 +22,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div id="contact" className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold text-center mb-6">Get Political Consultation</h1>
       
       <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded-lg p-6 border border-gray-200 max-w-md mx-auto">

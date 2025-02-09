@@ -32,7 +32,7 @@ const IndiaMap = () => {
 
     return (
         <div style={{ position: "relative" }}>
-            <svg viewBox="0 0 1000 1000" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+            <svg viewBox="0 0 1000 1000" width="80%" height="80%" preserveAspectRatio="xMidYMid meet">
                 <g id="label_points">
                     {states.map((state) => (
                         <path

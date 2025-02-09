@@ -11,11 +11,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      <Routes>
-        <Route path='/' element={<Index/>}/>
-        <Route path='/services' element={<Services/>}/>
-        <Route path='/contact' element={<ContactUs/>}/>
-      </Routes>
+      <Index/>
     </>
   )
 }

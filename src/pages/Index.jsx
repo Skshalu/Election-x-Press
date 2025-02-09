@@ -1,5 +1,7 @@
 import React from "react";
 import IndiaMap from "../components/IndiaMap";
+import Services from "./Services";
+import ContactUs from "../components/ContactUs";
 
 
 //Actual Data to be placed
@@ -66,9 +68,12 @@ function Index() {
 
 
             </div>
-            <div className="absolute w-full h-full">
+            <div id="about" className="relative w-full h-auto">
                 <IndiaMap/>
             </div>
+
+            <Services/>
+            <ContactUs/>
             
         </div>
 
