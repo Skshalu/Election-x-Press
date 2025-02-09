@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router";
-import ReactIcon from "../assets/react.svg"
+import logo from "../assets/Logo.png";
+
 
 const NAV_LINKS = [
   { name: "Home", path: "/" },
@@ -14,12 +15,12 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#003366] text-white shadow-lg">
+    <nav className="bg-[#fff] text-[#378CE7] shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="text-2xl font-bold flex flex-row gap-3">
-            <img src={ReactIcon}/>
+          <div className=" flex flex-row gap-3">
+            <img className="w-[150px]" src={logo}/>
             {/* Election-x-Press */}
           </div>
 
@@ -29,7 +30,7 @@ function Navbar() {
                 <a 
                   href={link.path}
                   key={link.path}
-                  className="hover:bg-[#0055aa] p-2 rounded-[5px]"
+                  className="hover:bg-[#0055aa] hover:text-white p-2 rounded-[5px]"
                   >
                     {link.name}
                 </a>

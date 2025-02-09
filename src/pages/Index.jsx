@@ -2,6 +2,8 @@ import React from "react";
 import IndiaMap from "../components/IndiaMap";
 import Services from "./Services";
 import ContactUs from "../components/ContactUs";
+import Misc from "./Misc";
+import Conclu from "./Conclu";
 
 
 //Actual Data to be placed
@@ -73,6 +75,8 @@ function Index() {
             </div>
 
             <Services/>
+            <Conclu/>
+            <Misc/>
             <ContactUs/>
             
         </div>
