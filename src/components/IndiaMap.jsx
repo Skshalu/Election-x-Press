@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const IndiaMap = () => {
     const [hoveredState, setHoveredState] = useState(null);
     const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
     const [hoverName, setHoverName] = useState("")
+
+    
 
     // State Data (Add More if Needed)
     const states = [
@@ -31,7 +34,7 @@ const IndiaMap = () => {
     ];
 
     return (
-        <div style={{ position: "relative" }}>
+        <div className="relative flex justify-center">
             <svg viewBox="0 0 1000 1000" width="80%" height="80%" preserveAspectRatio="xMidYMid meet">
                 <g id="label_points">
                     {states.map((state) => (

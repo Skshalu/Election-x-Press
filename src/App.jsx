@@ -5,13 +5,15 @@ import { Routes,Route } from 'react-router'
 import Index from './pages/Index'
 import Services from './pages/Services'
 import ContactUs from './components/ContactUs'
+import ElectionXPress from './pages/ElectionXPress'
 
 function App() {
 
   return (
     <>
-      <Navbar/>
-      <Index/>
+      {/* <Navbar/> */}
+      <ElectionXPress/>
+      {/* <Index/> */}
     </>
   )
 }

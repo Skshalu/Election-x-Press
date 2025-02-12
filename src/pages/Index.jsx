@@ -4,83 +4,90 @@ import Services from "./Services";
 import ContactUs from "../components/ContactUs";
 import Misc from "./Misc";
 import Conclu from "./Conclu";
+import { motion } from "framer-motion";
 
-
-//Actual Data to be placed
-const intro = "This is a placeholder for the introduction details of ElectionXPress.";
-const whyElectionXPress = "Placeholder text explaining why ElectionXPress is beneficial.";
+const intro = "Empowering electoral processes with cutting-edge technology and efficiency.";
+const whyElectionXPress = "ElectionXPress revolutionizes the way elections are managed, ensuring transparency, speed, and accuracy.";
 
 const strengths = [
-    "Strength 1",
-    "Strength 2",
-    "Strength 3",
-    "Strength 4",
+    "Unmatched Accuracy",
+    "Robust Security",
+    "Scalable Solutions",
+    "Proven Expertise",
 ];
 
 const fieldsOfOperation = [
-    "Operation 1",
-    "Operation 2",
-    "Operation 3",
-    "Operation 4",
+    "Election Data Management",
+    "Electronic Voting Solutions",
+    "Real-time Monitoring",
+    "Secure Vote Counting",
 ];
 
-const note = "This is an important note related to ElectionXPress.";
+const note = "ElectionXPress is committed to delivering reliable and transparent electoral solutions.";
 
 function Index() {
     return (
-        <div>
-            <div className="max-w-4xl mx-auto p-6 space-y-6">
-                {/* Intro Section */}
-                <section>
-                    <h2 className="text-2xl font-bold text-blue-600">Intro</h2>
-                    <p className="text-gray-700">{intro}</p>
-                </section>
+        <div className="w-full min-h-screen">
+            {/* Hero Section */}
+            <section className="relative bg-gradient-to-r from-blue-700 to-purple-600 text-white py-20 text-center">
+                <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} 
+                    className="text-5xl font-bold">Election-X-Press</motion.h1>
+                <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }}
+                    className="text-lg mt-4 max-w-3xl mx-auto">
+                    {intro}
+                </motion.p>
+                <motion.button className="mt-6 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-gray-200 transition"
+                    whileHover={{ scale: 1.1 }}>
+                    Learn More
+                </motion.button>
+            </section>
 
+            {/* Main Content */}
+            <div className="max-w-6xl mx-auto px-6 py-12 space-y-12">
                 {/* Why ElectionXPress */}
-                <section>
-                    <h2 className="text-2xl font-bold text-blue-600">Why ElectionXPress?</h2>
-                    <p className="text-gray-700">{whyElectionXPress}</p>
-                </section>
+                <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}
+                    className="text-center">
+                    <h2 className="text-3xl font-bold text-blue-700">Why ElectionXPress?</h2>
+                    <p className="text-gray-700 mt-4">{whyElectionXPress}</p>
+                </motion.section>
 
                 {/* Strengths */}
-                <section>
-                    <h2 className="text-2xl font-bold text-blue-600">Strengths</h2>
-                    <ul className="list-disc list-inside text-gray-700">
-                        {strengths.map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>
+                <section className="grid md:grid-cols-2 gap-6">
+                    {strengths.map((item, index) => (
+                        <motion.div key={index} className="p-6 bg-white shadow-lg rounded-lg text-center border-l-4 border-blue-500"
+                            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: index * 0.2 }}>
+                            <h3 className="text-lg font-semibold text-gray-800">{item}</h3>
+                        </motion.div>
+                    ))}
                 </section>
 
                 {/* Field of Operation */}
-                <section>
-                    <h2 className="text-2xl font-bold text-blue-600">Field of Operation</h2>
-                    <ul className="list-disc list-inside text-gray-700">
-                        {fieldsOfOperation.map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>
+                <section className="grid md:grid-cols-2 gap-6">
+                    {fieldsOfOperation.map((item, index) => (
+                        <motion.div key={index} className="p-6 bg-white shadow-lg rounded-lg text-center border-l-4 border-purple-500"
+                            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: index * 0.2 }}>
+                            <h3 className="text-lg font-semibold text-gray-800">{item}</h3>
+                        </motion.div>
+                    ))}
                 </section>
 
                 {/* Note Section */}
-                <section className="p-4 bg-yellow-100 border-l-4 border-yellow-500 rounded-sm">
-                    <h2 className="text-lg font-semibold">Note:</h2>
+                <section className="p-6 bg-yellow-100 border-l-4 border-yellow-500 rounded-md text-center">
+                    <h2 className="text-lg font-semibold">Important Note</h2>
                     <p className="text-gray-700">{note}</p>
                 </section>
-
-
             </div>
+
+            {/* India Map */}
             <div id="about" className="relative w-full h-auto">
-                <IndiaMap/>
+                <IndiaMap />
             </div>
 
-            <Services/>
-            <Conclu/>
-            <Misc/>
-            <ContactUs/>
-            
+            <Services />
+            <Conclu />
+            <Misc />
+            <ContactUs />
         </div>
-
     );
 }
 
