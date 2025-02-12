@@ -4,44 +4,6 @@ body{
     background-color: #f0f8ff;
 }
 
-.state {
-    position: absolute;
-    background-color: red;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    opacity: 0  ;
-    transition: all 0.3s ease-in-out;
+textarea{
+    field-sizing: content;
 }
-
-.state::after {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 8px;
-    border-style: solid;
-    border-color: red transparent transparent transparent;
-}
-
-/* Show on Hover */
-.india-map:hover .state {
-    opacity: 1;
-}
-
-/* Position States Correctly */
-.delhi { top: 20%; left: 52%; }
-.uttar-pradesh { top: 30%; left: 55%; }
-.bihar { top: 35%; left: 58%; }
-.rajasthan { top: 40%; left: 40%; }
-.madhya-pradesh { top: 50%; left: 48%; }
-.maharashtra { top: 60%; left: 47%; }
-.gujarat { top: 55%; left: 35%; }
-.telangana { top: 70%; left: 50%; }
-.karnataka { top: 75%; left: 50%; }
-.tamil-nadu { top: 85%; left: 52%; }
-.assam { top: 30%; left: 75%; }
-.west-bengal { top: 40%; left: 70%; }
