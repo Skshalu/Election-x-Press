@@ -75,6 +75,7 @@ export default function ElectionXPress() {
                     [section.id]: rect.top < window.innerHeight * 0.75 && rect.bottom >= 0
                 }));
             });
+            
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -205,7 +206,7 @@ export default function ElectionXPress() {
                 </div>
             </section>
             {/* India Map */}
-            <div id="about" className="relative w-full h-auto">
+            <div id="about" className="relative w-full h-auto bg-gray-500">
                 <IndiaMap/>
             </div>
 

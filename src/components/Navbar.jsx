@@ -1,65 +1,33 @@
-import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
-import logo from "../assets/Logo.png";
+import React from 'react'
 
-const NAV_LINKS = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "#about" },
-  { name: "Services", path: "#services" },
-  { name: "Contact", path: "#contact" },
-];
+function Navbar({ scrollY }) {
+    return (
+        <nav className={`fixed w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-white/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'
+            }`}>
+            <div className="max-w-7xl mx-auto px-4">
+                <div className="flex justify-between items-center h-20">
+                    <div className="flex-shrink-0 flex items-center">
+                        <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                            Election-X-Press
+                        </span>
+                    </div>
 
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <nav className="bg-white text-blue-700 shadow-md">
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-16">
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <img className="w-36" src={logo} alt="Election-X-Press Logo" />
-        </div>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6">
-          {NAV_LINKS.map((link) => (          
-            <a 
-              href={link.path}
-              key={link.path}
-              className="px-4 py-2 rounded-lg hover:bg-blue-700 hover:text-white transition"
-            >
-              {link.name}
-            </a>
-          ))}
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu Dropdown */}
-      {isOpen && (
-        <div className="md:hidden bg-blue-700 py-4 text-center">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.path}
-              href={link.path}
-              className="block py-2 text-white hover:text-gray-200 transition"
-              onClick={() => setIsOpen(false)} // Close menu on click
-            >
-              {link.name}
-            </a>
-          ))}
-        </div>
-      )}
-    </nav>
-  );
+                    <div className="hidden md:flex space-x-8">
+                        {['Home', 'Services', 'Contact'].map((item) => (
+                            <a
+                                key={item}
+                                href={`#${item.toLowerCase()}`}
+                                className="relative group text-gray-600 hover:text-blue-600 px-3 py-2"
+                            >
+                                {item}
+                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    )
 }
 
-export default Navbar;
+export default Navbar
